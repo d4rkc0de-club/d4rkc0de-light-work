@@ -3,7 +3,7 @@ l1ghtw0rk
 
 ## to do :
 (yes todo is in the readme.)
-
+- [ ] see which tech stack to use, html css js? postgres db? flask server? the blueprint? hahaha
 - [ ] input name + branch + any other info + ???
 - [ ] log their ip/mac or whatever's possible (research a bit) for security and preventing spam
 - [ ] make it functional first, design later
