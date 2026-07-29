@@ -4,8 +4,8 @@ l1ghtw0rk
 
 ## to do :
 (yes todo is in the readme.)
-- [ ] html, css + postgres + flask server
-- [ ] PROPER STRUCTURE FOR DATA
+- [ ] html, css + sqlite + flask server 
+- [ ] PROPER STRUCTURE FOR DB DATA 
 - [ ] input name + branch + any other info + ???
 - [ ] log their ip/mac or whatever's possible (research a bit) for security and preventing spam
 - [ ] make it functional first, design later
