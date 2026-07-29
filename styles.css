@@ -1,0 +1,20 @@
+.main-inputs{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    gap: 10px;
+}
+
+.text{
+    /* background-color: aqua; */
+    /* gap: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-boxes{
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
