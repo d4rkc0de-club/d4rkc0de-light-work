@@ -1,9 +1,11 @@
 # Club-Mela ctf
 l1ghtw0rk
+- [ ] PORT FORWARDING REMINDER!!! 
 
 ## to do :
 (yes todo is in the readme.)
-- [ ] see which tech stack to use, html css js? postgres db? flask server? the blueprint? hahaha
+- [ ] html, css + postgres + flask server
+- [ ] PROPER STRUCTURE FOR DATA
 - [ ] input name + branch + any other info + ???
 - [ ] log their ip/mac or whatever's possible (research a bit) for security and preventing spam
 - [ ] make it functional first, design later
