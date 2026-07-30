@@ -1,11 +1,11 @@
 .main-inputs{
-    /* background-color: rebeccapurple; */
+    background-color: rebeccapurple;
     display: flex;
     gap: 10px;
 }
 
 .text{
-    /* background-color: aqua; */
+    background-color: aqua;
     /* gap: 10px; */
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
 }
 
 .input-boxes{
-    /* background-color: brown; */
+    background-color: brown;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
