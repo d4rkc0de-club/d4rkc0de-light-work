@@ -8,7 +8,7 @@ l1ghtw0rk
 (yes todo is in the readme.)
 
 - [ ] html, css + sqlite + flask server
-- [ ] PROPER STRUCTURE FOR DB DATA - {name, username, branch, {time lvl1...time lvl4}, time quiz, total time}
+- [ ] PROPER STRUCTURE FOR DB DATA - {name, username, branch, experience, {time lvl1...time lvl4}, time quiz, total time}
 - [ ] Store the time they registered and at what time they to solved "x" level, subtract those 2 to get the time it took them, use that to filter people.
 - [ ] make a leaderboard using that time thingy.
 - [ ] input name + branch + any other info + ???
