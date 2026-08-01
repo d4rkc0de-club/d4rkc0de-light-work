@@ -1,7 +1,57 @@
-<!doctype html>
-<title>Hello from Flask</title>
-{% if person %}
-  <h1>Hello {{ person }}!</h1>
-{% else %}
-  <h1>Hello, World!</h1>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>l1ghtw0rk by d4rkc0de</title>
+</head>
+<body>
+    <div class="main-inputs">
+        <div class="text">
+            <label for="full-name">Full Name</label>
+            <br>
+            <label for="username">Username</label>
+            <br>
+            <label for="branch">Branch</label>
+            <br>
+            <label for="experience">Experience</label>
+        </div>
+
+        <div class="input-boxes">
+            <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                value="{{ full_name if full_name else '' }}"
+            >
+            <br>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                value="{{ username if username else '' }}"
+            >
+            <br>
+
+            <input
+                type="text"
+                id="branch"
+                name="branch"
+                value="{{ branch if branch else '' }}"
+            >
+            <br>
+
+            <input
+                type="range"
+                id="experience"
+                name="experience"
+                min="0"
+                max="10"
+                value="{{ experience if experience is defined else 0 }}"
+            >
+        </div>
+    </div>
+</body>
+</html>
