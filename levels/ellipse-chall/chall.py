@@ -26,3 +26,9 @@ for byte in flag_bytes:
 
     # Round for cleaner output
     output_data.append((round(y, 5), round(theta, 5)))
+
+
+# Write to output file
+with open("output.txt", "w") as f:
+    for y, theta in output_data:
+        f.write(f"{y},{theta}\n")
