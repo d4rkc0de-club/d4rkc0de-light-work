@@ -12,7 +12,7 @@ l1ghtw0rk
 ## to do :
 (yes todo is in the readme.)
 
-- [ ] NO FLAG SHARING, IMPLEMENT CHECKS FOR THAT.
+- [ ] NO FLAG SHARING, IMPLEMENT CHECKS FOR THAT. JUST ADD FLAG GENERATOR IN flask
 - [ ] html, css + sqlite + flask server
 - [ ] PROPER STRUCTURE FOR DB DATA - {name, username, branch, experience, {time lvl1...time lvl4}, time quiz, total time}
 - [ ] Store the time they registered and at what time they to solved "x" level, subtract those 2 to get the time it took them, use that to filter people.
