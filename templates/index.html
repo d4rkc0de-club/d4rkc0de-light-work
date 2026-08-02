@@ -20,52 +20,40 @@
         </div>
 
         <div class="input-boxes">
-            <input
-                type="text"
-                id="full-name"
-                name="full-name"
-                value="{{ full_name if full_name else '' }}"
-            >
+            <input type="text" id="full-name" name="full-name">
             <br>
-
-            <input
-                type="text"
-                id="username"
-                name="username"
-                value="{{ username if username else '' }}"
-            >
+            <input type="text" id="username" name="username">
             <br>
-
-            <input
-                type="text"
-                id="branch"
-                name="branch"
-                value="{{ branch if branch else '' }}"
-            >
+            <input type="text" id="branch" name="branch">
             <br>
-
-            <input
-                type="range"
-                id="experience"
-                name="experience"
-                min="0"
-                max="10"
-                value="{{ experience if experience is defined else 0 }}"
-            >
+            <input type="range" id="experience" name="experience" min="0" max="10">
         </div>
         
     </div>
-    <button type="submit">Register</button>
+    <button type="submit" id="reg">Register</button>
     </div>
     <script>
 
         
+        const button = document.getElementById('reg');
 
-        // document.cookie = "name=dark; path=/";
-        // document.cookie = "username=admin; path=/";
-        // document.cookie = "branch=csd; path=/";
-
-        console.log(document.cookie);
+        button.addEventListener('click', () =>{
+            for (const x of document.getElementsByTagName('input')){
+                if (x.value === ''){
+                    console.log("empty");
+                    return;
+                }
+            }
+            document.cookie = `name=${document.getElementById('full-name').value}; path=/`;
+            document.cookie = `username=${document.getElementById('username').value}; path=/`;
+            document.cookie = `branch=${document.getElementById('branch').value}; path=/`;
+            document.cookie = `device=${self.crypto.randomUUID()}; path=/`;
+            // not secure at all.
+            // console.log(document.cookie);
+            window.location.reload();
+            return;
+        })
+        
 
 
     </script>
