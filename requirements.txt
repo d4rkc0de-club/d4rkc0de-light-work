@@ -1,3 +1,0 @@
-flask
-base64
-sqlite3
