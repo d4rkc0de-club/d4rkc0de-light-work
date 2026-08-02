@@ -6,3 +6,8 @@ dist/
 htmlcov/
 .tox/
 docs/_build/
+ctfd-app/
+CTFd/*.zip
+
+ctfd-app/
+CTFd/*.zip
