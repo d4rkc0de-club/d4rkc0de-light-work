@@ -90,7 +90,7 @@ def chat_endpoint():
 
     try:
         response = chat(
-            model="qwen2.5:1.5b",
+            model="qwen2.5:0.5b",
             messages=messages,
         )
         assistant_msg = response["message"]["content"]
