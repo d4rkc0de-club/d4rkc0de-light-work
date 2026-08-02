@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>d4rkBot — AI Challenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -69,7 +70,7 @@
         .bot-avatar {
             width: 40px;
             height: 40px;
-            border-radius: 12px;
+            /* border-radius: 12px; */
             background: var(--accent-dim);
             border: 1px solid rgba(0, 229, 160, 0.2);
             display: flex;
@@ -80,7 +81,7 @@
         }
 
         .bot-info h1 {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 16px;
             font-weight: 700;
             color: var(--accent);
@@ -98,7 +99,7 @@
             width: 6px;
             height: 6px;
             background: var(--accent);
-            border-radius: 50%;
+            /* border-radius: 50%; */
             margin-right: 4px;
             box-shadow: 0 0 6px var(--accent-glow);
             animation: pulse-dot 2s ease-in-out infinite;
@@ -114,7 +115,7 @@
             border: 1px solid var(--border);
             color: var(--text-secondary);
             padding: 8px 14px;
-            border-radius: 10px;
+            /* border-radius: 10px; */
             font-size: 13px;
             font-family: 'Inter', sans-serif;
             cursor: pointer;
@@ -154,7 +155,7 @@
 
         .chat-area::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 4px;
+            /* border-radius: 4px; */
         }
 
         /* ── Messages ── */
@@ -206,7 +207,7 @@
 
         .message-bubble {
             padding: 12px 16px;
-            border-radius: 16px;
+            /* border-radius: 16px; */
             font-size: 14.5px;
             line-height: 1.6;
             word-wrap: break-word;
@@ -228,21 +229,21 @@
         }
 
         .message.bot .message-bubble code {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             background: rgba(255, 255, 255, 0.06);
             padding: 2px 6px;
-            border-radius: 4px;
+            /* border-radius: 4px; */
             font-size: 13px;
         }
 
         .message.bot .message-bubble pre {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            /* border-radius: 8px; */
             padding: 12px;
             margin: 8px 0;
             overflow-x: auto;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 13px;
             line-height: 1.5;
         }
@@ -270,7 +271,7 @@
         }
 
         .welcome h2 {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 20px;
             color: var(--accent);
             margin-bottom: 8px;
@@ -289,11 +290,11 @@
             padding: 12px 16px;
             background: var(--accent-dim);
             border: 1px solid rgba(0, 229, 160, 0.15);
-            border-radius: 12px;
+            /* border-radius: 12px; */
             font-size: 13px;
             color: var(--accent);
             display: inline-block;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
         }
 
         /* ── Typing Indicator ── */
@@ -315,7 +316,7 @@
             padding: 14px 18px;
             background: var(--bot-bubble);
             border: 1px solid var(--bot-border);
-            border-radius: 16px;
+            /* border-radius: 16px; */
             border-bottom-left-radius: 4px;
         }
 
@@ -323,7 +324,7 @@
             width: 7px;
             height: 7px;
             background: var(--text-muted);
-            border-radius: 50%;
+            /* border-radius: 50%; */
             animation: bounce 1.4s ease-in-out infinite;
         }
 
@@ -350,7 +351,7 @@
             gap: 10px;
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 16px;
+            /* border-radius: 16px; */
             padding: 6px 6px 6px 16px;
             transition: border-color 0.2s ease;
         }
@@ -381,7 +382,7 @@
         .send-btn {
             width: 40px;
             height: 40px;
-            border-radius: 12px;
+            /* border-radius: 12px; */
             border: none;
             background: var(--accent);
             color: var(--bg-primary);
@@ -454,10 +455,10 @@
     <div class="header">
         <div class="header-left">
             <!-- <div class="bot-avatar">🤖</div> -->
-             <div class="bot-avatar"><img src="./owasp.webp" alt="D4" style="width: 36px; border-radius: 12px;"></div>
+             <div class="bot-avatar"><img src="./owasp.webp" alt="D4" style="width: 36px;"></div>
             <div class="bot-info">
-                <h1>d4rkBot</h1>
-                <p><span class="status-dot"></span>online</p>
+                <!-- <h1>d4rkb0t</h1> -->
+                <!-- <p><span class="status-dot"></span>online</p> -->
             </div>
         </div>
         <button class="reset-btn" onclick="resetChat()">↻ Reset</button>
@@ -466,15 +467,15 @@
     <!-- Chat Area -->
     <div class="chat-area" id="chatArea">
         <div class="welcome" id="welcome">
-            <div class="welcome-icon"><img src="./owasp.webp" alt="D4" style="width: 128px; border-radius: 12px;"></div>
-            <h2>d4rkBot</h2>
+            <div class="welcome-icon"><img src="./owasp.webp" alt="D4" style="width: 128px;"></div>
+            <h2>d4rkb0t</h2>
             <p>I'm a programming assistant made d4rkc0de. Ask me anything about code!</p>
-            <div class="hint">Can you find the flag?</div>
+            <div class="hint">can you find the flag?</div>
         </div>
 
         <!-- Typing indicator -->
         <div class="typing-indicator" id="typingIndicator">
-            <span class="message-label">d4rkBot</span>
+            <span class="message-label">d4rkb0t</span>
             <div class="typing-dots">
                 <span></span><span></span><span></span>
             </div>
