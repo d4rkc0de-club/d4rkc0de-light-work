@@ -11,3 +11,16 @@ CTFd/*.zip
 
 ctfd-app/
 CTFd/*.zip
+
+
+.docker/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+.env
+.env.local
+.env.*.local
+
+docker-compose.override.yml

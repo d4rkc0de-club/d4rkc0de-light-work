@@ -8,6 +8,17 @@ l1ghtw0rk
 
 - internal network for containers?
 
+clone CTFd repo
+
+```bash
+git clone https://github.com/CTFd/CTFd.git
+```
+
+```bash
+ln -s "$(pwd)/l1ghtw0rk-theme" "$(pwd)/CTFd/CTFd/themes/l1ghtw0rk-theme"
+```
+
+(windows has some other command mklink something)
 
 ## to do :
 (yes todo is in the readme.)
