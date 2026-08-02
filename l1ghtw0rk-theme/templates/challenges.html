@@ -1,20 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="jumbotron">
-    <div class="container">
-      <h1>
-        {% trans %}Challenges{% endtrans %}
-      </h1>
-    </div>
-  </div>
+  <div class="container" style="padding-top: 1.5rem;">
+    <h1 style="font-size: 20px; margin-bottom: 4px;">{% trans %}Challenges{% endtrans %}</h1>
+    <p class="text-muted" style="font-size: 13px; margin-bottom: 1.5rem;">Select a challenge to view details and submit a flag.</p>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        {% include "components/errors.html" %}
-      </div>
-    </div>
+    {% include "components/errors.html" %}
 
     <div 
       x-data="ChallengeBoard" 
@@ -36,32 +27,35 @@
 
       <div x-show="loaded">
         <template x-for="(category, idx) in getCategories()" :key="idx">
-          <div class="pt-5">
-            <div class="category-header mb-3">
-              <h3 x-text="category"></h3>
+          <div class="mb-4">
+            <div class="mb-2">
+              <h3 x-text="category" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: #8b8b96; text-transform: uppercase; letter-spacing: 0.5px;"></h3>
             </div>
 
-            <div class="category-challenges d-flex flex-column">
-              <div class="challenges-row row">
-                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                  <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                    <button
-                        class="challenge-button btn btn-dark w-100 h-100"
-                        :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) => `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];"
-                        :value="c.id" @click="loadChallenge(c.id)"
-                    >
-
-                      <div class="challenge-inner my-3">
-                        <p x-text="c.name"></p>
-                        <span x-text="c.value"></span>
-                      </div>
-                    </button>
+            <div class="d-flex flex-column gap-2">
+              <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
+                <button
+                    class="challenge-button btn w-100 text-start"
+                    :class="[
+                      c.solved_by_me ? 'challenge-solved' : '',
+                      ...c.tags.map((tag) => `tag-${tag.value.replace(/ /g, '-')}`),
+                    ];"
+                    :value="c.id" @click="loadChallenge(c.id)"
+                    style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px;"
+                >
+                  <div>
+                    <div class="challenge-inner">
+                      <p class="mb-0" x-text="c.name"></p>
+                    </div>
                   </div>
-                </template>
-              </div>
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <template x-if="c.solved_by_me">
+                      <span style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: #22c55e; background: rgba(34,197,94,0.1); padding: 2px 6px; border-radius: 4px;">✓</span>
+                    </template>
+                    <span x-text="c.value" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4ade80; font-weight: 500;"></span>
+                  </div>
+                </button>
+              </template>
             </div>
           </div>
         </template>
