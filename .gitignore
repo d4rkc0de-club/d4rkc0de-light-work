@@ -6,3 +6,15 @@ dist/
 htmlcov/
 .tox/
 docs/_build/
+
+.docker/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+.env
+.env.local
+.env.*.local
+
+docker-compose.override.yml
