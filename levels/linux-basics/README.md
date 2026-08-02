@@ -7,5 +7,5 @@ simple flag using ls and cat (its in the root folder /flag_easy.txt)
 
 2 flags for this level:
 
-flags : 1. d4rk{hi}
-        2. d4rk{hard_hi}
+flags : 1. d4rk{linux_is_ez}c0de 
+        2. d4rk{wow_you_know?}c0de
