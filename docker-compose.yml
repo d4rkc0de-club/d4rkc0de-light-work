@@ -1,0 +1,90 @@
+version: '3.9'
+
+services:
+  # -------------------------
+  # Core CTFd Infrastructure
+  # -------------------------
+  ctfd:
+    image: ctfd/ctfd:latest
+    user: root
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - UPLOAD_FOLDER=/var/uploads
+      - DATABASE_URL=mysql+pymysql://ctfd:ctfd@db/ctfd
+      - REDIS_URL=redis://cache:6379
+      - WORKERS=1
+      - LOG_FOLDER=/var/log/CTFd
+      - ACCESS_LOG=-
+      - ERROR_LOG=-
+      - REVERSE_PROXY=true
+    volumes:
+      - .data/CTFd/logs:/var/log/CTFd
+      - .data/CTFd/uploads:/var/uploads
+      # Mount the custom theme!
+      - ./l1ghtw0rk-theme:/opt/CTFd/CTFd/themes/l1ghtw0rk-theme
+    depends_on:
+      - db
+      - cache
+
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=ctfd
+      - MARIADB_USER=ctfd
+      - MARIADB_PASSWORD=ctfd
+      - MARIADB_DATABASE=ctfd
+      - MARIADB_AUTO_UPGRADE=1
+    volumes:
+      - .data/mysql:/var/lib/mysql
+
+  cache:
+    image: redis:4
+    restart: always
+    volumes:
+      - .data/redis:/data
+
+  # -------------------------
+  # Challenge: AI Level
+  # -------------------------
+  ai-lvl-web:
+    build: ./levels/ai-lvl
+    ports:
+      - "5001:5000"
+    depends_on:
+      - ollama-service
+
+  ollama-service:
+    image: ollama/ollama
+    volumes:
+      - .data/ollama:/root/.ollama
+    # Small script to pull the model if it doesn't exist, then start the server
+    entrypoint: >
+      /bin/sh -c "ollama serve & sleep 3 && ollama pull qwen2.5:1.5b && wait"
+
+  # -------------------------
+  # Challenge: Web Level
+  # -------------------------
+  web-lvl:
+    image: nginx:alpine
+    ports:
+      - "5002:80"
+    volumes:
+      - ./levels/web-lvl:/usr/share/nginx/html:ro
+
+  # -------------------------
+  # Challenge: Linux Basics
+  # -------------------------
+  linux-basics:
+    build: ./levels/linux-basics
+    ports:
+      - "5021:5021"
+    read_only: false
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

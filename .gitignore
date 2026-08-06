@@ -24,3 +24,4 @@ CTFd/*.zip
 .env.*.local
 
 docker-compose.override.yml
+.data/
